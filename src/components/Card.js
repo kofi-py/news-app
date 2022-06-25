@@ -1,17 +1,17 @@
 import React from 'react';
-import {StyleSheet, View, Text, Platform} from 'react-native';
+import {StyleSheet, View, Text, Platform, Image} from 'react-native';
 
 const Card = props => {
     return (
         <View style={styles.card}>
             <View style={styles.imageContainer}>
-
+                <Image style={styles.image} source={require('../../assets/news-demo.jpg')} />
             </View>
             <View style={styles.titleContainer}>
-                <Text>Dummy Title</Text>
+                <Text style={styles.titleText}>Dummy Title</Text>
             </View>
             <View style={styles.description}>
-                <Text>This is a dummy description</Text>
+                <Text style={styles.descriptionText}>This is a dummy description</Text>
             </View>
         </View>
     );
@@ -36,13 +36,25 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     overflow: 'hidden'
    },
+   image: {
+    width: '100%',
+    height: '100%'
+   },
    titleContainer: {
     height: '10%',
-    paddingHorizontal: 15,
-    fontWeight: 'bold'
+    paddingHorizontal: 15
+   },
+   titleText: {
+    fontWeight: 'bold',
+    marginTop: 10,
+    fontSize: 15
    },
    description: {
     paddingHorizontal: 15
+   },
+   descriptionText: {
+    marginTop: 10,
+    fontSize: 15
    } 
 });
 
