@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
    },
    titleContainer: {
     height: '10%',
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+    fontWeight: 'bold'
    },
    description: {
     paddingHorizontal: 15
