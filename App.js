@@ -1,26 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {React, useState} from 'react';
+import { View } from 'react-native';
 
-
+import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
+import * as Font from 'expo-font';
 import Card from './src/components/Card';
 import Header from './src/components/Header';
 
+const loadFonts = () => {
+  return Font.loadAsync({
+    'Graphik': require('./assets/fonts/regular.ttf'),
+    'Graphik-Bold': require('./assets/fonts/semibold.ttf')
+  });
+}
+
 
 export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+  if (!fontLoaded) {
+    <AppLoading 
+     startAsync={loadFonts}
+     onFinish={() => setFontLoaded(true)}
+    />
+  }
   return (
     <View>
-      <Header title="News App" />
-      <Card />
+        <Header title="News App" />
+        <Card />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'silver',
-    padding: 50,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center'
-  }
-});

@@ -45,14 +45,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
    },
    titleText: {
+    fontFamily: 'Graphik',
     fontWeight: 'bold',
     marginTop: 10,
-    fontSize: 15
+    fontSize: 20
    },
    description: {
     paddingHorizontal: 15
    },
    descriptionText: {
+    fontFamily: 'Graphik',
     marginTop: 10,
     fontSize: 15
    } 
