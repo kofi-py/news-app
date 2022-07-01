@@ -7,6 +7,7 @@ import * as Font from 'expo-font';
 import Card from './src/components/Card';
 import Header from './src/components/Header';
 
+
 const loadFonts = () => {
   return Font.loadAsync({
     'Graphik': require('./assets/fonts/regular.ttf'),
