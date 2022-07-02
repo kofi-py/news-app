@@ -4,8 +4,8 @@ import { View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
-import Card from './src/components/Card';
-import Header from './src/components/Header';
+
+import AppContainer from './src/navigation/AppNavigator';
 
 
 const loadFonts = () => {
@@ -25,9 +25,6 @@ export default function App() {
     />
   }
   return (
-    <View>
-        <Header title="News App" />
-        <Card />
-    </View>
+    <AppContainer />
   );
 }
