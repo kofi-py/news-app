@@ -1,21 +1,23 @@
 import React from 'react';
-import {StyleSheet, View, Text, Platform, Image} from 'react-native'
+import {StyleSheet, View, Text, Platform, Image, TouchableOpacity} from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 
 const Card = props => {
     return (
-        <View style={styles.card}>
-            <View style={styles.imageContainer}>
-                <Image style={styles.image} source={require('../../assets/news-demo.jpg')} />
+        <TouchableOpacity onPress={() => props.navigation.navigate('NewsItem')}>
+            <View style={styles.card}>
+                <View style={styles.imageContainer}>
+                    <Image style={styles.image} source={require('../../assets/news-demo.jpg')} />
+                </View>
+                <View style={styles.titleContainer}>
+                    <Text style={styles.titleText}>Dummy Title</Text>
+                    <MaterialIcons name="favorite-border" size={24} color="#72bcd4" />
+                </View>
+                <View style={styles.description}>
+                    <Text style={styles.descriptionText}>This is a dummy description</Text>
+                </View>
             </View>
-            <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>Dummy Title</Text>
-                <MaterialIcons name="favorite-border" size={24} color="#72bcd4" />
-            </View>
-            <View style={styles.description}>
-                <Text style={styles.descriptionText}>This is a dummy description</Text>
-            </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 
@@ -50,7 +52,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
    },
    titleText: {
-    fontFamily: 'Graphik',
     fontWeight: 'bold',
     marginTop: 10,
     fontSize: 20
@@ -59,7 +60,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
    },
    descriptionText: {
-    fontFamily: 'Graphik',
     marginTop: 10,
     fontSize: 15
    } 

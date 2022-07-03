@@ -8,7 +8,10 @@ const AppNavigator = createStackNavigator({
         screen: NewsListScreen
     },
     NewsItem: {
-        screen: NewsItemScreen
+        screen: NewsItemScreen,
+        navigationOptions: {
+            headerTitle: 'Details'
+        }
     }
 });
 
