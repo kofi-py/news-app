@@ -1,8 +1,11 @@
 import {React, useState} from 'react';
 import AppContainer from './src/navigation/AppNavigator';
+import ErrorBoundary from './ErrorBoundary';
 
 export default function App() {
   return (
-    <AppContainer />
+    <ErrorBoundary>
+      <AppContainer />
+    </ErrorBoundary>
   );
 }

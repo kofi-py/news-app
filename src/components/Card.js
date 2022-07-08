@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text, Platform, Image, TouchableOpacity} from 'react-native'
-import { MaterialIcons } from '@expo/vector-icons'
+import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 
 const Card = props => {
     return (
@@ -11,7 +11,7 @@ const Card = props => {
                 </View>
                 <View style={styles.titleContainer}>
                     <Text style={styles.titleText}>Dummy Title</Text>
-                    <MaterialIcons name="favorite-border" size={24} color="#72bcd4" />
+                    <MaterialIcons name="favorite" size={24} color="#58c4dd" />
                 </View>
                 <View style={styles.description}>
                     <Text style={styles.descriptionText}>This is a dummy description</Text>
