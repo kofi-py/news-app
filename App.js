@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import AppContainer from './src/navigation/AppNavigator';
 import ErrorBoundary from './ErrorBoundary';
 

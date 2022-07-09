@@ -11,7 +11,7 @@ const Card = props => {
                 </View>
                 <View style={styles.titleContainer}>
                     <Text style={styles.titleText}>Dummy Title</Text>
-                    <MaterialIcons name="favorite" size={24} color="#58c4dd" />
+                    <MaterialIcons name="favorite-border" size={24} color="#58c4dd" />
                 </View>
                 <View style={styles.description}>
                     <Text style={styles.descriptionText}>This is a dummy description</Text>
