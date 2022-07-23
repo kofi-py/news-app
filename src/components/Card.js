@@ -1,20 +1,37 @@
 import React from 'react';
 import {StyleSheet, View, Text, Platform, Image, TouchableOpacity} from 'react-native'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
+import { useDispatch, useSelector } from 'react-redux';
+
+import * as newsAction from '../redux/actions/newsAction'
 
 const Card = props => {
+    const dispatch = useDispatch();
+    const isFav = useSelector(state => state.news.favorites.some(article => article.url === props.url))
+
+    
     return (
-        <TouchableOpacity onPress={() => props.navigation.navigate('NewsItem')}>
+        <TouchableOpacity onPress={() => props.navigation.navigate({ routeName: 'NewsItem', params: {articleURL: props.url}})}>
             <View style={styles.card}>
                 <View style={styles.imageContainer}>
-                    <Image style={styles.image} source={require('../../assets/news-demo.jpg')} />
+                    <Image style={styles.image} source={{ uri: props.image }} />
                 </View>
                 <View style={styles.titleContainer}>
-                    <Text style={styles.titleText}>Dummy Title</Text>
-                    <MaterialIcons name="favorite-border" size={24} color="#58c4dd" />
+                    <Text style={styles.titleText}>
+                        {props.title.length > 25 ? props.title.slice(0, 25) + '...': props.title}
+                    </Text>
+                    <MaterialIcons 
+                        name={isFav ? 'favorite': 'favorite-border'}
+                        size={24} color="#58c4dd" 
+                        onPress={() => {
+                            dispatch(newsAction.toggleFavorites(props.url))
+                        }}
+                    />
                 </View>
                 <View style={styles.description}>
-                    <Text style={styles.descriptionText}>This is a dummy description</Text>
+                    <Text style={styles.descriptionText}>
+                    {props.description.length > 100 ? props.description.slice(0, 100) + '...': props.description}
+                    </Text>
                 </View>
             </View>
         </TouchableOpacity>
