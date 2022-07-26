@@ -2,12 +2,16 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { AntDesign } from '@expo/vector-icons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { createAppContainer } from 'react-navigation';
+
+
 import NewsListScreen from '../screens/NewsListScreen';
 import NewsItemScreen from '../screens/NewsItemScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import AboutScreen from '../screens/AboutScreen';
-import { createAppContainer } from 'react-navigation';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+
 
 
 const StackNavigator = createStackNavigator({
